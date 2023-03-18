@@ -7,9 +7,10 @@ namespace Array
         private Object[] InnerList;
         public int Length => InnerList.Length;
 
+        
         public Array(int defaultSize = 4)
         {
-            InnerList = new object[defaultSize];
+            InnerList = new Object[defaultSize];
         }
 
         public Array(params Object[] list) : this(list.Length)

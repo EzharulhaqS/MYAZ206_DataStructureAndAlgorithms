@@ -1,11 +1,21 @@
 ﻿
-var friends = new Array.Array("Ezhar", "Nursena", "Simba", "Sedi");
-friends.SetValue(2, "Ahmet");
-Console.WriteLine(friends.GetValue(2));
 
-foreach (var friend in friends)
+
+Array.Array newArray = new Array.Array(12,32,54,43,56,8,65,54);
+for (int i = 0; i < newArray.Length; i++)
 {
-    Console.WriteLine(friend);
+    newArray.SetValue(i, i*2+2);
+}
+for(int i = 0; i < newArray.Length; i++)
+{
+    Console.WriteLine(newArray.GetValue(i));
 }
 
+//Console.WriteLine(newArray.GetValue(2));
+
+
+
+
 Console.ReadKey();
+
+
