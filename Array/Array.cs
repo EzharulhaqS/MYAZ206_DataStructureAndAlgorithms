@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace Array
 {
@@ -6,8 +7,11 @@ namespace Array
     {
         private Object[] InnerList;
         public int Length => InnerList.Length;
-
         
+        private int Counter = 0;
+
+       
+
         public Array(int defaultSize = 4)
         {
             InnerList = new Object[defaultSize];
@@ -18,6 +22,19 @@ namespace Array
             System.Array.Copy(list, InnerList, list.Length);
         }
 
+        public void Add(Object item)
+        {
+            InnerList[Counter] = item;
+            Counter++;
+
+            if(Counter == InnerList.Length)
+            {
+                this.DoubleArray();
+            }
+
+         
+        }
+        
         public object Clone()
         {
             return this.MemberwiseClone();
@@ -47,6 +64,21 @@ namespace Array
             {
                 throw new ArgumentOutOfRangeException("index");
             }
+        }
+
+        private void DoubleArray()
+        {
+            Object[] tempArr = new Object[InnerList.Length * 2];
+
+
+            for (int i = 0; i < InnerList.Length; i++)
+            {
+                tempArr[i] = InnerList[i];
+            }
+
+            InnerList = tempArr;
+
+
         }
     }
 }

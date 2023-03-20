@@ -1,19 +1,49 @@
 ﻿
+Array.Array array = new Array.Array();
 
-string[] _array = new string[3] { "Ezhar", "Shams", "Shahid" };
-string[] new_array = new string[4];
-Console.WriteLine(_array.Length);
-new_array[0] = _array[0];
-new_array[1] = _array[1];
-new_array[2] = _array[2];
-_array = new_array;
-_array[3] = "sidi";
-Console.WriteLine(_array.Length);
+array.Add("Ezhar");
+array.Add("Shams");
+array.Add("Shahid");
 
-static void DoubleArray(string[] arr)
+Console.WriteLine($"Array length before adding 4th : {array.Length}");
+array.Add("Omer");
+Console.WriteLine($"Array length after adding 4th : {array.Length}");
+array.Add("Nur");
+array.Add("Ehsan");
+array.Add("Sidi");
+array.Add("Bek");
+Console.WriteLine($"Array length after adding 8th : {array.Length}");
+
+
+/*
+
+void Add(string item)
+{
+	names[Counter] = item;
+	Counter++;
+
+	if (Counter == names.Length)
+	{
+		DoubleArray(names);
+	}
+}
+*/
+
+/*void DoubleArray(string[] arr)
 {
     string[] tempArr = new string[arr.Length * 2];
+	
+
+	for (int i = 0; i < arr.Length; i++)
+	{
+		tempArr[i] = arr[i];	
+	}
+
+	names = tempArr;
+
+
 }
+*/
 
 
 
